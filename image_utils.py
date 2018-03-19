@@ -44,8 +44,7 @@ def get_images_train(file, train_dir = None, refresh = False, add_noise = False,
         for img in os.listdir(train_dir):
             if filter_func(img):  
                 path = os.path.join(train_dir, img)
-                img_data = read_and_process_image(path, add_noise, gray_flag)          
-                img_data = np.array(img_data).flatten() 
+                img_data = read_and_process_image(path, add_noise, gray_flag)
                 train.append(img_data)
         train = np.array(train)
         np.save(file, train)
